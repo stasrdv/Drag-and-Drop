@@ -20,24 +20,24 @@ export class AppComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
+      const eventData: any = event.container.data[event.previousIndex];
+      const title = eventData.title;
       moveItemInArray(
         event.container.data,
         event.previousIndex,
         event.currentIndex
       );
-      const eventData: any = event.container.data[0];
-      const title = eventData.title;
       this.openSnackBar(title, `moved to priority ${event.currentIndex + 1}`);
     } else {
+      const eventData: any = event.previousContainer.data[event.previousIndex];
+      const title = eventData.title;
+      this.openSnackBar(title, "Done");
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex
       );
-      const eventData: any = event.container.data[0];
-      const title = eventData.title;
-      this.openSnackBar(title, "Done");
     }
   }
 
@@ -54,39 +54,33 @@ export class AppComponent implements OnInit {
 
 const mockdata: Array<SingleTask> = [
   {
-    id: 1,
-    title: "Get to work",
-    body:
-      "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  },
-  {
     id: 2,
-    title: "Go home",
-    body:
-      "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-  },
-  {
-    id: 3,
-    title: "Fall asleep",
-    body:
-      "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+    title: "Get to work",
+    body: "Take bus 64 or 56 and then 91"
   },
   {
     id: 4,
+    title: "Go home",
+    body: "Take bus 91 and then 64"
+  },
+  {
+    id: 6,
+    title: "Fall asleep",
+    body: "Netflix and chill"
+  },
+  {
+    id: 1,
     title: "Get up",
-    body:
-      "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    body: "Have a nice day"
   },
   {
     id: 5,
     title: "Take a shower",
-    body:
-      "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+    body: ""
   },
   {
-    id: 6,
+    id: 3,
     title: "Check e-mail",
-    body:
-      "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+    body: "Work done"
   }
 ];
