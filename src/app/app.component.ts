@@ -6,7 +6,6 @@ import {
 } from "@angular/cdk/drag-drop";
 import { MatSnackBar } from "@angular/material";
 import { SingleTask } from "./models/task.model";
-import { Stats } from "fs";
 
 @Component({
   selector: "app-root",
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
       );
       const eventData: any = event.container.data[0];
       const title = eventData.title;
-      this.openSnackBar(title, `moved to position ${event.currentIndex}`);
+      this.openSnackBar(title, `moved to priority ${event.currentIndex + 1}`);
     } else {
       transferArrayItem(
         event.previousContainer.data,
