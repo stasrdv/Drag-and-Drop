@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       );
       const eventData: any = event.container.data[0];
       const title = eventData.title;
-      this.openSnackBar(title, `moved to index ${event.currentIndex}`);
+      this.openSnackBar(title, `moved to position ${event.currentIndex}`);
     } else {
       transferArrayItem(
         event.previousContainer.data,
