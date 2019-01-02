@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,8 @@ import { MatBadgeModule } from "@angular/material/badge";
     BrowserModule,
     BrowserAnimationsModule,
     DragDropModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

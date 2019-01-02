@@ -4,7 +4,9 @@ import {
   moveItemInArray,
   transferArrayItem
 } from "@angular/cdk/drag-drop";
+import { MatSnackBar } from "@angular/material";
 import { SingleTask } from "./models/task.model";
+import { Stats } from "fs";
 
 @Component({
   selector: "app-root",
@@ -14,9 +16,9 @@ import { SingleTask } from "./models/task.model";
 export class AppComponent implements OnInit {
   todo: Array<SingleTask> = [];
   done: Array<SingleTask> = [];
-  numOf = 20;
 
-  constructor() {}
+  constructor(public snackBar: MatSnackBar) {}
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -24,6 +26,9 @@ export class AppComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      const eventData: any = event.container.data[0];
+      const title = eventData.title;
+      this.openSnackBar(title, `moved to index ${event.currentIndex}`);
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -31,7 +36,16 @@ export class AppComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      const eventData: any = event.container.data[0];
+      const title = eventData.title;
+      this.openSnackBar(`The task - ${title}`, "Done");
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000
+    });
   }
 
   ngOnInit() {
