@@ -38,13 +38,13 @@ export class AppComponent implements OnInit {
       );
       const eventData: any = event.container.data[0];
       const title = eventData.title;
-      this.openSnackBar(`The task - ${title}`, "Done");
+      this.openSnackBar(title, "Done");
     }
   }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000
+      duration: 3000
     });
   }
 
