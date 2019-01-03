@@ -10,8 +10,8 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <div class="todo-box" *ngFor="let item of todo" cdkDrag>
-      {{ item.title }} <span>{{ item.id }}</span>
+    <div class="todo-box" *ngFor="let item of todo; let i = index" cdkDrag>
+      {{ item.title }} <span>{{ i + 1 }}</span>
     </div>
   </div>
 </div>

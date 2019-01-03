@@ -54,32 +54,32 @@ export class AppComponent implements OnInit {
 
 const mockdata: Array<SingleTask> = [
   {
-    id: 2,
+    id: 0,
     title: "Get to work",
     body: "Take bus 64 or 56 and then 91"
   },
   {
-    id: 4,
+    id: 1,
     title: "Go home",
     body: "Take bus 91 and then 64"
   },
   {
-    id: 6,
+    id: 2,
     title: "Fall asleep",
     body: "Netflix and chill"
   },
   {
-    id: 1,
+    id: 3,
     title: "Get up",
     body: "Have a nice day"
   },
   {
-    id: 5,
+    id: 4,
     title: "Take a shower",
     body: ""
   },
   {
-    id: 3,
+    id: 5,
     title: "Check e-mail",
     body: "Work done"
   }
