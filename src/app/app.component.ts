@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
-      this.openSnackBar(title, `moved to priority ${event.currentIndex + 1}`);
+      this.openSnackBar(title, `moved to priority ${event.currentIndex}`);
     } else {
       const eventData: any = event.previousContainer.data[event.previousIndex];
       const title = eventData.title;

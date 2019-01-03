@@ -2,7 +2,6 @@
   font-family: sans-serif;
   padding-left: 20px;
   height: 50px;
-  border-bottom: 2px solid #49c5b6;
 }
 
 .example-container {
@@ -16,7 +15,7 @@
 
 .example-list {
   font-family: sans-serif;
-  border: solid 1px #df6c4f;
+  border: solid 1px #4687f4;
   min-height: 60px;
   background: white;
   border-radius: 4px;
@@ -25,7 +24,7 @@
 }
 .done-list {
   font-family: sans-serif;
-  border: solid 1px #49c5b6;
+  border: solid 1px #1fa463;
   min-height: 60px;
   background: white;
   border-radius: 4px;
@@ -35,7 +34,7 @@
 
 .todo-box {
   padding: 20px 10px;
-  border-bottom: solid 1px #df6c4f;
+  border-bottom: solid 1px white;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
@@ -43,13 +42,12 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: #f3f7fa;
-  margin-bottom: 1px;
+  background: #4687f48c;
   font-size: 18px;
 }
 .done-box {
   padding: 20px 10px;
-  border-bottom: solid 1px #49c5b6;
+  border-bottom: solid 1px #1ba261;
   color: black;
   display: flex;
   flex-direction: row;
@@ -57,7 +55,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: #9fd2d6;
+  background: #1ba26133;
   margin-bottom: 1px;
   font-size: 18px;
 }
@@ -66,13 +64,12 @@
   box-sizing: border-box;
   border-radius: 8px;
   font-family: sans-serif;
-  background-color: #df6c4f;
+  background-color: #ffcf479e;
   box-shadow: 0px 11px 17px -5px rgba(0, 0, 0, 1);
 }
 
 .cdk-drag-placeholder {
   opacity: 0;
-  background-color: red;
 }
 
 .cdk-drag-animating {
